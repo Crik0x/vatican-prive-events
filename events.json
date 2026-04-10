@@ -1,79 +1,217 @@
 {
   "club": "Vatican Privé",
   "last_updated": "2026-04-10",
+  "pricing_tiers": {
+    "osservatore": { "label": "Osservatore", "discount": 0 },
+    "anima":       { "label": "Anima",       "discount": 0.15 },
+    "costruttore": { "label": "Costruttore", "discount": 0.33 }
+  },
   "categories": [
-    { "id": "arte",         "label": "Arte & Cultura",    "icon": "🎨" },
-    { "id": "musica",       "label": "Musica",             "icon": "🎶" },
-    { "id": "gastronomia",  "label": "Gastronomia",        "icon": "🍷" },
-    { "id": "esclusivo",    "label": "Accesso Esclusivo",  "icon": "🔑" },
-    { "id": "benessere",    "label": "Benessere",          "icon": "✨" },
-    { "id": "networking",   "label": "Networking",         "icon": "🤝" },
-    { "id": "esperienza",   "label": "Esperienze Uniche",  "icon": "🌍" }
+    { "id": "socialita",   "label": "Socialità & Cultura", "icon": "✦" },
+    { "id": "gioco",       "label": "Gioco & Strategia",   "icon": "✦" },
+    { "id": "business",    "label": "Business & Mindset",  "icon": "✦" },
+    { "id": "gastronomia", "label": "Gastronomia",         "icon": "✦" },
+    { "id": "escursione",  "label": "Fuori Roma",          "icon": "✦" }
+  ],
+  "formats": [
+    {
+      "format_id": "salotto_damascati",
+      "base_title": "Il Salotto dei Damascati",
+      "category": ["socialita"],
+      "recurrence": "Ogni venerdì",
+      "description_short": "Un salotto di conversazione raffinata tra persone che sanno ascoltare e sorprendere.",
+      "description_long": "Il Salotto dei Damascati è il cuore pulsante del Club. Ogni venerdì, una stanza, una conversazione, persone scelte. La cultura come pretesto per conoscersi davvero.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 45,
+        "anima": 38,
+        "costruttore": 30
+      }
+    },
+    {
+      "format_id": "menti_segreto",
+      "base_title": "Menti in Segreto",
+      "category": ["gioco", "socialita"],
+      "recurrence": "2 sabati al mese",
+      "description_short": "Un gioco di intelligenza sociale dove le regole non si dicono, si scoprono.",
+      "description_long": "Menti in Segreto è un'esperienza di gioco collettivo che mette alla prova intuizione, strategia e lettura dell'altro. Non è un gioco da tavolo. È molto di più.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 120,
+        "anima": 102,
+        "costruttore": 80
+      }
+    },
+    {
+      "format_id": "scacchiera_re",
+      "base_title": "La Scacchiera dei Re",
+      "category": ["gioco", "business"],
+      "recurrence": "Ogni mercoledì",
+      "description_short": "Gli scacchi come metafora del pensiero strategico applicato al business e alla vita.",
+      "description_long": "La Scacchiera dei Re non è un torneo. È un laboratorio di pensiero. Ogni partita è una conversazione tra due visioni del mondo. Chi gioca, impara a decidere.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 25,
+        "anima": 21,
+        "costruttore": 17
+      }
+    },
+    {
+      "format_id": "aperitivi_divini",
+      "base_title": "Aperitivi diVini",
+      "category": ["socialita", "gastronomia"],
+      "recurrence": "Ogni giovedì",
+      "description_short": "Vini di carattere, persone di spessore. Il giovedì sera fatto come si deve.",
+      "description_long": "Aperitivi diVini è il momento in cui il Club si apre al piacere puro. Selezioni di vini raccontate da chi li conosce, in compagnia di chi sa apprezzarli.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 45,
+        "anima": 38,
+        "costruttore": 30
+      }
+    },
+    {
+      "format_id": "conclave",
+      "base_title": "Il Conclave",
+      "category": ["business"],
+      "recurrence": "Quarta domenica del mese",
+      "description_short": "Una riunione riservata tra imprenditori e menti che costruiscono. Non si parla di lavoro — si fa.",
+      "description_long": "Il Conclave è l'appuntamento più esclusivo del Club. Accesso su invito o prenotazione. Un tavolo ristretto, conversazioni ad alto valore, connessioni reali tra persone che costruiscono cose importanti.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 250,
+        "anima": 213,
+        "costruttore": 168
+      }
+    },
+    {
+      "format_id": "cena_membri",
+      "base_title": "Cena dei Membri",
+      "category": ["socialita", "gastronomia"],
+      "recurrence": "Seconda domenica del mese",
+      "description_short": "La cena del Club. Ogni mese, la tavola apparecchiata per chi appartiene davvero.",
+      "description_long": "La Cena dei Membri è il rito mensile della comunità Vatican Privé. Un luogo diverso ogni volta, una cucina scelta, le stesse facce che diventano sempre più familiari.",
+      "image_url": "",
+      "pricing": {
+        "osservatore": 120,
+        "anima": 102,
+        "costruttore": 80
+      }
+    },
+    {
+      "format_id": "fuori_mura",
+      "base_title": "Fuori le Mura",
+      "category": ["escursione", "socialita"],
+      "recurrence": "Terza domenica del mese",
+      "description_short": "Quando Roma non basta. Un'uscita fuori porta tra luoghi, sapori e persone inaspettate.",
+      "description_long": "Fuori le Mura porta la comunità Vatican Privé oltre i confini della città. Ogni edizione è una destinazione diversa: borghi, cantine, palazzi privati, paesaggi dimenticati.",
+      "image_url": "",
+      "price_variable": true,
+      "pricing": {
+        "osservatore": { "min": 95,  "max": 190 },
+        "anima":       { "min": 81,  "max": 162 },
+        "costruttore": { "min": 64,  "max": 127 }
+      }
+    }
   ],
   "events": [
     {
       "id": "evt_001",
-      "title": "Cena Privata nei Giardini Vaticani",
-      "category": "gastronomia",
-      "date_start": "2026-05-15T20:00:00",
-      "date_end":   "2026-05-15T23:30:00",
+      "format_id": "salotto_damascati",
+      "title": "Il Salotto dei Damascati",
+      "date_start": "2026-05-08T19:30:00",
+      "date_end":   "2026-05-08T22:30:00",
       "location": {
-        "name": "Giardini Vaticani, Roma",
-        "address": "Via della Conciliazione, Roma",
+        "name": "Vatican Privé — Sede del Club",
+        "address": "Roma",
         "maps_url": ""
       },
-      "description_short": "Una cena esclusiva tra le sculture e i profumi dei Giardini Vaticani, con chef privato.",
-      "description_long": "Un'esperienza unica: la tavola apparecchiata al centro dei Giardini Vaticani dopo la chiusura al pubblico. Chef privato, vini selezionati, silenzio e bellezza assoluta.",
-      "image_url": "",
-      "capacity": 12,
-      "price_range": "€€€",
-      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20la%20Cena%20Privata%20Giardini%20Vaticani%20-%2015%20maggio",
+      "description_override": "",
+      "image_override": "",
+      "capacity": 20,
+      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Il%20Salotto%20dei%20Damascati%20-%208%20maggio",
       "booking_type": "whatsapp",
       "status": "available",
-      "featured": true,
+      "featured": false,
       "google_calendar_event_id": ""
     },
     {
       "id": "evt_002",
-      "title": "Apertura Notturna Musei Vaticani",
-      "category": "arte",
-      "date_start": "2026-05-22T21:00:00",
-      "date_end":   "2026-05-22T24:00:00",
+      "format_id": "aperitivi_divini",
+      "title": "Aperitivi diVini",
+      "date_start": "2026-05-07T19:00:00",
+      "date_end":   "2026-05-07T21:30:00",
       "location": {
-        "name": "Musei Vaticani",
-        "address": "Viale Vaticano, Roma",
+        "name": "Vatican Privé — Sede del Club",
+        "address": "Roma",
         "maps_url": ""
       },
-      "description_short": "I Musei Vaticani solo per voi, di notte. Cappella Sistina senza folla, nella luce giusta.",
-      "description_long": "Accesso esclusivo notturno ai Musei Vaticani con guida d'arte privata. La Cappella Sistina vissuta nel silenzio totale, illuminata come non l'avete mai vista.",
-      "image_url": "",
-      "capacity": 20,
-      "price_range": "€€€",
-      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20l%27Apertura%20Notturna%20Musei%20Vaticani%20-%2022%20maggio",
+      "description_override": "",
+      "image_override": "",
+      "capacity": 25,
+      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Aperitivi%20diVini%20-%207%20maggio",
+      "booking_type": "whatsapp",
+      "status": "available",
+      "featured": false,
+      "google_calendar_event_id": ""
+    },
+    {
+      "id": "evt_003",
+      "format_id": "conclave",
+      "title": "Il Conclave — Maggio",
+      "date_start": "2026-05-24T11:00:00",
+      "date_end":   "2026-05-24T15:00:00",
+      "location": {
+        "name": "Sede Riservata",
+        "address": "Roma — comunicata ai prenotati",
+        "maps_url": ""
+      },
+      "description_override": "Edizione di maggio. Tema: costruire reti che durano.",
+      "image_override": "",
+      "capacity": 12,
+      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Il%20Conclave%20-%2024%20maggio",
       "booking_type": "whatsapp",
       "status": "available",
       "featured": true,
       "google_calendar_event_id": ""
     },
     {
-      "id": "evt_003",
-      "title": "Concerto da Camera a Palazzo",
-      "category": "musica",
-      "date_start": "2026-06-05T19:30:00",
-      "date_end":   "2026-06-05T22:00:00",
+      "id": "evt_004",
+      "format_id": "cena_membri",
+      "title": "Cena dei Membri — Maggio",
+      "date_start": "2026-05-11T20:00:00",
+      "date_end":   "2026-05-11T23:30:00",
       "location": {
-        "name": "Palazzo Storico Privato, Roma",
-        "address": "Roma, Centro Storico",
+        "name": "Da definire",
+        "address": "Roma",
         "maps_url": ""
       },
-      "description_short": "Quartetto d'archi in un palazzo nobiliare del '600. Trenta ospiti, un'acustica irripetibile.",
-      "description_long": "Un quartetto d'archi internazionale esegue Beethoven e Schubert nella sala affrescata di un palazzo nobiliare romano del XVII secolo. Trenta ospiti al massimo.",
-      "image_url": "",
+      "description_override": "",
+      "image_override": "",
       "capacity": 30,
-      "price_range": "€€",
-      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20il%20Concerto%20da%20Camera%20-%205%20giugno",
+      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20la%20Cena%20dei%20Membri%20-%2011%20maggio",
       "booking_type": "whatsapp",
       "status": "available",
+      "featured": false,
+      "google_calendar_event_id": ""
+    },
+    {
+      "id": "evt_005",
+      "format_id": "fuori_mura",
+      "title": "Fuori le Mura — Maggio",
+      "date_start": "2026-05-17T09:30:00",
+      "date_end":   "2026-05-17T19:00:00",
+      "location": {
+        "name": "Da definire",
+        "address": "Fuori Roma",
+        "maps_url": ""
+      },
+      "description_override": "",
+      "image_override": "",
+      "capacity": 20,
+      "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Fuori%20le%20Mura%20-%2017%20maggio",
+      "booking_type": "whatsapp",
+      "status": "coming_soon",
       "featured": false,
       "google_calendar_event_id": ""
     }
