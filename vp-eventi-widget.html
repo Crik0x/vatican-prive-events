@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vatican Privé — Gli Appuntamenti del Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --oro: #C9A96E;
+    --oro-scuro: #8B6914;
+    --oro-chiaro: #F5ECD8;
+    --nero: #1A1814;
+    --nero-medio: #3A3530;
+    --grigio: #6B6458;
+    --grigio-chiaro: #F5F0E8;
+    --bianco: #FAFAF7;
+    --card-bg: #2A2520;
+    --card-border: rgba(201,169,110,0.15);
+  }
+
+  body {
+    background: var(--nero);
+    color: var(--bianco);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .vp-header {
+    text-align: center;
+    padding: 64px 24px 48px;
+  }
+
+  .vp-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--oro);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .vp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--bianco);
+  }
+
+  .vp-title em {
+    font-style: italic;
+    color: var(--oro);
+  }
+
+  /* ── TIER SWITCH ── */
+  .tier-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 24px 16px;
+  }
+
+  .tier-switch {
+    display: inline-flex;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--card-bg);
+  }
+
+  .tier-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 13px 28px;
+    background: transparent;
+    color: var(--grigio);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--card-border);
+    white-space: nowrap;
+  }
+
+  .tier-btn:last-child { border-right: none; }
+
+  .tier-btn.active {
+    background: var(--oro);
+    color: var(--nero);
+  }
+
+  .tier-btn:not(.active):hover {
+    color: var(--oro-chiaro);
+    background: rgba(201,169,110,0.07);
+  }
+
+  .tier-hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--grigio);
+    padding: 8px 24px 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .tier-hint span {
+    color: var(--oro);
+    font-weight: 500;
+  }
+
+  /* ── DIVIDER ── */
+  .vp-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--oro-scuro);
+    margin: 0 auto 48px;
+    opacity: 0.5;
+  }
+
+  /* ── FILTRI CATEGORIA ── */
+  .filtri-wrapper {
+    padding: 0 32px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .filtri-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin-bottom: 14px;
+  }
+
+  .filtri-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filtro-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 3px;
+    background: transparent;
+    color: #A09080;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filtro-btn.active {
+    background: var(--oro);
+    color: var(--nero);
+    border-color: var(--oro);
+  }
+
+  .filtro-btn:not(.active):hover {
+    border-color: var(--oro);
+    color: var(--oro-chiaro);
+  }
+
+  /* ── GRIGLIA EVENTI ── */
+  .eventi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+  }
+
+  /* ── CARD EVENTO ── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    position: relative;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201,169,110,0.35);
+  }
+
+  .card.hidden { display: none; }
+
+  /* Card immagine */
+  .card-img {
+    position: relative;
+    height: 200px;
+    background: #201C18;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.3s, transform 0.4s;
+  }
+
+  .card:hover .card-img img {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  .card-img-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: rgba(201,169,110,0.18);
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+
+  /* Badge in evidenza */
+  .badge-evidenza {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: var(--oro);
+    color: var(--nero);
+    padding: 5px 10px;
+    border-radius: 2px;
+    z-index: 2;
+  }
+
+  /* Badge status */
+  .badge-status {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 2px;
+    z-index: 2;
+  }
+
+  .badge-status.sold-out {
+    background: rgba(139,26,26,0.85);
+    color: #FFB3B3;
+  }
+
+  .badge-status.coming-soon {
+    background: rgba(58,53,48,0.9);
+    color: var(--oro);
+    border: 1px solid rgba(201,169,110,0.3);
+  }
+
+  /* Card body */
+  .card-body {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .card-categoria {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oro);
+  }
+
+  .card-data {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--grigio);
+    letter-spacing: 0.04em;
+  }
+
+  .card-titolo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--bianco);
+    margin-bottom: 10px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #A09080;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  /* Prezzo */
+  .card-prezzo-wrapper {
+    border-top: 1px solid rgba(201,169,110,0.12);
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .prezzo-info { flex: 1; }
+
+  .prezzo-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin-bottom: 4px;
+  }
+
+  .prezzo-tier-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .prezzo-tier-label.osservatore { color: #A09080; }
+  .prezzo-tier-label.anima { color: #C9A96E; }
+  .prezzo-tier-label.costruttore { color: #F5ECD8; }
+
+  .prezzo-valore {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .prezzo-valore.osservatore { color: #A09080; }
+  .prezzo-valore.anima { color: var(--oro); }
+  .prezzo-valore.costruttore { color: var(--oro-chiaro); }
+
+  .prezzo-sconto {
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .prezzo-sconto.anima { color: rgba(201,169,110,0.6); }
+  .prezzo-sconto.costruttore { color: rgba(245,236,216,0.6); }
+
+  /* CTA button */
+  .btn-prenota {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+.btn-prenota.available {
+    background: var(--nero);
+    color: var(--oro);
+}
+
+  .btn-prenota.available:hover {
+    background: var(--oro-chiaro);
+  }
+
+  .btn-prenota.disabled {
+    background: transparent;
+    color: var(--grigio);
+    border: 1px solid rgba(107,100,88,0.4);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* Nessun risultato */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--grigio);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  /* Caricamento */
+  .loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  .loading-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--oro);
+    margin: 0 4px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Google Calendar CTA */
+  .gcal-section {
+    text-align: center;
+    padding: 0 24px 80px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .gcal-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin-bottom: 14px;
+  }
+
+  .gcal-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #A09080;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .btn-gcal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1px solid rgba(201,169,110,0.4);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--oro);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-gcal:hover {
+    background: rgba(201,169,110,0.08);
+    border-color: var(--oro);
+  }
+
+  .btn-gcal svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .vp-title { font-size: 38px; }
+    .eventi-grid { grid-template-columns: 1fr; padding: 0 16px 60px; }
+    .filtri-wrapper { padding: 0 16px 28px; }
+    .tier-btn { padding: 11px 16px; font-size: 10px; }
+    .card-titolo { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="vp-header">
+  <div class="vp-eyebrow">Vatican Privé &middot; Roma</div>
+  <h1 class="vp-title">Gli <em>Appuntamenti</em><br>del Club</h1>
+</div>
+
+<div class="tier-wrapper">
+  <div class="tier-switch">
+    <button class="tier-btn active" data-tier="osservatore">Osservatore</button>
+    <button class="tier-btn" data-tier="anima">Anima</button>
+    <button class="tier-btn" data-tier="costruttore">Costruttore</button>
+  </div>
+</div>
+<div class="tier-hint" id="tier-hint">Stai vedendo i prezzi standard</div>
+
+<div class="vp-divider"></div>
+
+<div class="filtri-wrapper">
+  <div class="filtri-label">Filtra per categoria</div>
+  <div class="filtri-row" id="filtri-row">
+    <button class="filtro-btn active" data-cat="tutti">Tutti gli eventi</button>
+  </div>
+</div>
+
+<div class="eventi-grid" id="eventi-grid">
+  <div class="loading">
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+  </div>
+</div>
+
+<div class="gcal-section">
+  <div class="gcal-label">Non perdere nessun appuntamento</div>
+  <p class="gcal-desc">Aggiungi il calendario del Club al tuo Google Calendar e ricevi aggiornamenti automatici su ogni nuovo evento.</p>
+  <div class="gcal-label">La funzione sarà presto attiva.</div>
+  <div class="gcal-label">Grazie per la pazienza.</div>
+  <button onclick="window.open('https://calendar.google.com/calendar/r?cid=vaticanprive%40gmail.com','_blank')" class="btn-gcal">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    </svg>
+    Aggiungi al tuo calendario
+  </button>
+</div>
+
+<script>
+const JSON_URL = 'https://raw.githubusercontent.com/Crik0x/vatican-prive-events/refs/heads/main/events.json';
+
+const GCAL_URL = '';
+
+let data = null;
+let activeTier = 'osservatore';
+let activeCat = 'tutti';
+
+const tierHints = {
+  osservatore: 'Stai vedendo i prezzi standard',
+  anima: 'Stai vedendo i prezzi riservati ai Membri <span>Anima · −15%</span>',
+  costruttore: 'Stai vedendo i prezzi riservati ai <span>Costruttori · −33%</span>'
+};
+
+function formatData(dateStr) {
+  const d = new Date(dateStr);
+  const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  const mesi = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  const g = giorni[d.getDay()];
+  const m = mesi[d.getMonth()];
+  const ora = d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+  return `${g} ${d.getDate()} ${m} · ${ora}`;
+}
+
+function formatPrezzo(pricing, tier, price_variable) {
+  if (!pricing || !pricing[tier]) return '—';
+  const p = pricing[tier];
+  if (price_variable && typeof p === 'object' && p.min !== undefined) {
+    return `${p.min}€ – ${p.max}€`;
+  }
+  return `${p}€`;
+}
+
+function getCategoryLabel(catId) {
+  if (!data) return catId;
+  const cat = data.categories.find(c => c.id === catId);
+  return cat ? cat.label : catId;
+}
+
+function getFormatData(formatId) {
+  if (!data) return null;
+  return data.formats.find(f => f.format_id === formatId) || null;
+}
+
+function buildCard(event) {
+  const fmt = getFormatData(event.format_id);
+  if (!fmt) return '';
+
+  const title = event.title || fmt.base_title;
+  const desc = event.description_override || fmt.description_short;
+  const imgUrl = event.image_override || fmt.image_url || '';
+  const pricing = fmt.pricing;
+  const price_variable = fmt.price_variable || false;
+
+  const catLabel = fmt.category && fmt.category.length > 0
+    ? getCategoryLabel(fmt.category[0])
+    : '';
+
+  const cats = fmt.category || [];
+  const catMatch = activeCat === 'tutti' || cats.includes(activeCat);
+
+  const prezzoStr = formatPrezzo(pricing, activeTier, price_variable);
+
+  let scontoStr = '';
+  if (activeTier === 'anima') scontoStr = '−15% rispetto al prezzo standard';
+  if (activeTier === 'costruttore') scontoStr = '−33% rispetto al prezzo standard';
+
+  let btnHtml = '';
+  let statusBadge = '';
+
+  if (event.status === 'available') {
+    btnHtml = `<a href="${event.booking_url}" target="_blank" class="btn-prenota available">Prenota</a>`;
+  } else if (event.status === 'sold_out') {
+    btnHtml = `<button class="btn-prenota disabled">Esaurito</button>`;
+    statusBadge = `<div class="badge-status sold-out">Esaurito</div>`;
+  } else if (event.status === 'coming_soon') {
+    btnHtml = `<button class="btn-prenota disabled">Presto disponibile</button>`;
+    statusBadge = `<div class="badge-status coming-soon">Presto disponibile</div>`;
+  } else {
+    btnHtml = '';
+  }
+
+  const featuredBadge = event.featured ? `<div class="badge-evidenza">In evidenza</div>` : '';
+
+  const imgContent = imgUrl
+    ? `<img src="${imgUrl}" alt="${title}" loading="lazy">`
+    : `<div class="card-img-placeholder">VP</div>`;
+
+  return `
+    <div class="card ${catMatch ? '' : 'hidden'}" data-cats='${JSON.stringify(cats)}'>
+      <div class="card-img">
+        ${featuredBadge}
+        ${imgContent}
+        ${statusBadge}
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-categoria">${catLabel}</span>
+          <span class="card-data">${formatData(event.date_start)}</span>
+        </div>
+        <h2 class="card-titolo">${title}</h2>
+        <p class="card-desc">${desc}</p>
+        <div class="card-prezzo-wrapper">
+          <div class="prezzo-info">
+            <div class="prezzo-label">Quota di partecipazione</div>
+            <div class="prezzo-tier-label ${activeTier}">${data.pricing_tiers[activeTier].label}</div>
+            <div class="prezzo-valore ${activeTier}">${prezzoStr}</div>
+            ${scontoStr ? `<div class="prezzo-sconto ${activeTier}">${scontoStr}</div>` : ''}
+          </div>
+          ${btnHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderEvents() {
+  const grid = document.getElementById('eventi-grid');
+  if (!data || !data.events) return;
+
+  const visibleEvents = data.events.filter(e => e.status !== 'cancelled');
+  const html = visibleEvents.map(buildCard).join('');
+  grid.innerHTML = html || `<div class="no-results">Nessun evento in questa categoria al momento.</div>`;
+
+  applyFilter();
+}
+
+function applyFilter() {
+  const cards = document.querySelectorAll('.card');
+  let visible = 0;
+  cards.forEach(card => {
+    const cats = JSON.parse(card.dataset.cats || '[]');
+    const show = activeCat === 'tutti' || cats.includes(activeCat);
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  if (visible === 0) {
+    const existing = document.querySelector('.no-results');
+    if (!existing) {
+      document.getElementById('eventi-grid').insertAdjacentHTML('beforeend',
+        `<div class="no-results">Nessun evento in questa categoria al momento.</div>`);
+    }
+  } else {
+    const existing = document.querySelector('.no-results');
+    if (existing) existing.remove();
+  }
+}
+
+function buildFiltri() {
+  const row = document.getElementById('filtri-row');
+  if (!data) return;
+
+  const usedCatIds = new Set();
+  data.events.forEach(e => {
+    const fmt = getFormatData(e.format_id);
+    if (fmt && fmt.category) fmt.category.forEach(c => usedCatIds.add(c));
+  });
+
+  const usedCats = data.categories.filter(c => usedCatIds.has(c.id));
+
+  let html = `<button class="filtro-btn active" data-cat="tutti">Tutti gli eventi</button>`;
+  usedCats.forEach(cat => {
+    html += `<button class="filtro-btn" data-cat="${cat.id}">${cat.label}</button>`;
+  });
+  row.innerHTML = html;
+
+  row.querySelectorAll('.filtro-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      row.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      applyFilter();
+    });
+  });
+}
+
+async function init() {
+  try {
+    const res = await fetch(JSON_URL + '?t=' + Date.now());
+    data = await res.json();
+
+    if (GCAL_URL) {
+      const btnGcal = document.getElementById('btn-gcal');
+btnGcal.href = GCAL_URL;
+btnGcal.target = '_blank';
+    }
+
+    buildFiltri();
+    renderEvents();
+  } catch(e) {
+    document.getElementById('eventi-grid').innerHTML =
+      `<div class="no-results">Impossibile caricare gli eventi. Riprova tra poco.</div>`;
+  }
+}
+
+document.querySelectorAll('.tier-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTier = btn.dataset.tier;
+    document.getElementById('tier-hint').innerHTML = tierHints[activeTier];
+    renderEvents();
+  });
+});
+
+init();
+</script>
+</body>
+</html>

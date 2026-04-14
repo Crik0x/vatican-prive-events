@@ -1,6 +1,6 @@
 {
   "club": "Vatican Privé",
-  "last_updated": "2026-04-10",
+  "last_updated": "2026-04-14",
   "pricing_tiers": {
     "osservatore": { "label": "Osservatore", "discount": 0 },
     "anima":       { "label": "Anima",       "discount": 0.15 },
@@ -119,12 +119,12 @@
       "id": "evt_001",
       "format_id": "salotto_damascati",
       "title": "Il Salotto dei Damascati",
-      "date_start": "2026-05-08T19:30:00",
-      "date_end":   "2026-05-08T22:30:00",
+      "date_start": "2026-04-18T20:00:00",
+      "date_end":   "2026-04-18T23:00:00",
       "location": {
         "name": "Vatican Privé — Sede del Club",
-        "address": "Roma",
-        "maps_url": ""
+        "address": "Via della Conciliazione 44, Roma",
+        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
       },
       "description_override": "",
       "image_override": "",
@@ -133,7 +133,7 @@
       "booking_type": "whatsapp",
       "status": "available",
       "featured": false,
-      "google_calendar_event_id": ""
+      "google_calendar_event_id": "https://calendar.app.google/LwD4fxagR68dYcpj9"
     },
     {
       "id": "evt_002",
@@ -144,7 +144,7 @@
       "location": {
         "name": "Vatican Privé — Sede del Club",
         "address": "Roma",
-        "maps_url": ""
+        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
       },
       "description_override": "",
       "image_override": "",
@@ -153,7 +153,7 @@
       "booking_type": "whatsapp",
       "status": "available",
       "featured": false,
-      "google_calendar_event_id": ""
+      "google_calendar_event_id": "https://calendar.app.google/4tLnhVq3mL9FgbZT7"
     },
     {
       "id": "evt_003",
