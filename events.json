@@ -1,6 +1,6 @@
 {
   "club": "Vatican Privé",
-  "last_updated": "2026-04-14",
+  "last_updated": "2026-04-15T11:00:00",
   "pricing_tiers": {
     "osservatore": { "label": "Osservatore", "discount": 0 },
     "anima":       { "label": "Anima",       "discount": 0.15 },
@@ -119,8 +119,8 @@
       "id": "evt_001",
       "format_id": "salotto_damascati",
       "title": "Il Salotto dei Damascati",
-      "date_start": "2026-04-18T20:00:00",
-      "date_end":   "2026-04-18T23:00:00",
+      "date_start": "2026-04-17T20:20:00",
+      "date_end":   "2026-04-17T22:30:00",
       "location": {
         "name": "Vatican Privé — Sede del Club",
         "address": "Via della Conciliazione 44, Roma",
@@ -139,8 +139,8 @@
       "id": "evt_002",
       "format_id": "aperitivi_divini",
       "title": "Aperitivi diVini",
-      "date_start": "2026-05-07T19:00:00",
-      "date_end":   "2026-05-07T21:30:00",
+      "date_start": "2026-04-18T20:00:00",
+      "date_end":   "2026-04-18T22:30:00",
       "location": {
         "name": "Vatican Privé — Sede del Club",
         "address": "Roma",
@@ -148,7 +148,7 @@
       },
       "description_override": "",
       "image_override": "",
-      "capacity": 25,
+      "capacity": 20,
       "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Aperitivi%20diVini%20-%207%20maggio",
       "booking_type": "whatsapp",
       "status": "available",
@@ -158,12 +158,12 @@
     {
       "id": "evt_003",
       "format_id": "conclave",
-      "title": "Il Conclave — Maggio",
-      "date_start": "2026-05-24T11:00:00",
-      "date_end":   "2026-05-24T15:00:00",
+      "title": "Il Conclave",
+      "date_start": "2026-05-03T20:00:00",
+      "date_end":   "2026-05-24T23:00:00",
       "location": {
         "name": "Sede Riservata",
-        "address": "Roma — comunicata ai prenotati",
+        "address": "Roma - Location comunicata solo ai partecipanti",
         "maps_url": ""
       },
       "description_override": "Edizione di maggio. Tema: costruire reti che durano.",
