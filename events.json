@@ -127,7 +127,7 @@
         "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
       },
       "description_override": "",
-      "image_override": "",
+      "image_override": "https://static.tildacdn.com/tild3761-6537-4339-b361-323437666632/Salotto_dei_Damascat.jpg",
       "capacity": 20,
       "booking_url": "https://wa.me/39XXXXXXXXXX?text=Vorrei%20prenotare%20Il%20Salotto%20dei%20Damascati%20-%208%20maggio",
       "booking_type": "whatsapp",
@@ -159,8 +159,8 @@
       "id": "evt_003",
       "format_id": "conclave",
       "title": "Il Conclave",
-      "date_start": "2026-05-03T20:00:00",
-      "date_end":   "2026-05-24T23:00:00",
+      "date_start": "2026-05-03T12:00:00",
+      "date_end":   "2026-05-03T21:00:00",
       "location": {
         "name": "Sede Riservata",
         "address": "Roma - Location comunicata solo ai partecipanti",
@@ -178,9 +178,9 @@
     {
       "id": "evt_004",
       "format_id": "cena_membri",
-      "title": "Cena dei Membri — Maggio",
-      "date_start": "2026-05-11T20:00:00",
-      "date_end":   "2026-05-11T23:30:00",
+      "title": "Cena dei Membri",
+      "date_start": "2026-05-06T20:00:00",
+      "date_end":   "2026-05-06T23:30:00",
       "location": {
         "name": "Da definire",
         "address": "Roma",
