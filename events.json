@@ -196,6 +196,26 @@
       "google_calendar_event_id": ""
     },
     {
+      "id": "evt_005",
+      "format_id": "menti_segreto",
+      "title": "Menti in Segreto",
+      "date_start": "2026-05-16T19:30:00",
+      "date_end":   "2026-05-23T23:00:00",
+      "location": {
+        "name": "Vatican Privé — Sede del Club",
+        "address": "Roma",
+        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
+      },
+      "description_override": "",
+      "image_override": "https://static.tildacdn.com/tild3536-6461-4439-b361-393062663263/Vatican_Priv_Menti_i.jpg",
+      "capacity": 16,
+      "booking_url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Menti+in+Segreto%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
+      "booking_type": "whatsapp",
+      "status": "available",
+      "featured": false,
+      "google_calendar_event_id": ""
+    },
+    {
       "id": "evt_006",
       "format_id": "fuori_mura",
       "title": "Fuori le Mura",
@@ -212,26 +232,6 @@
       "booking_url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Fuori+le+Mura%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
       "booking_type": "whatsapp",
       "status": "coming_soon",
-      "featured": false,
-      "google_calendar_event_id": ""
-    },
-    {
-      "id": "evt_005",
-      "format_id": "menti_segreto",
-      "title": "Menti in Segreto",
-      "date_start": "2026-05-16T19:30:00",
-      "date_end":   "2026-05-23T23:00:00",
-      "location": {
-        "name": "Vatican Privé — Sede del Club",
-        "address": "Roma",
-        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
-      },
-      "description_override": "",
-      "image_override": "https://static.tildacdn.com/tild3761-6537-4339-b361-323437666632/Salotto_dei_Damascat.jpg",
-      "capacity": 16,
-      "booking_url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Menti+in+Segreto%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
-      "booking_type": "whatsapp",
-      "status": "available",
       "featured": false,
       "google_calendar_event_id": ""
     }
