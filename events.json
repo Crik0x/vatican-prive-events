@@ -23,9 +23,9 @@
       "description_long": "Il Salotto dei Damascati è il cuore pulsante del Club. Ogni venerdì, una stanza, una conversazione, persone scelte. La cultura come pretesto per conoscersi davvero.",
       "image_url": "",
       "pricing": {
-        "osservatore": 
-        "anima": 
-        "costruttore": 
+        "osservatore": 0,
+        "anima":      0,
+        "costruttore":  0
       }
     },
     {
