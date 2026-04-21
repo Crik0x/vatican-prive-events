@@ -1,6 +1,6 @@
 {
   "club": "Vatican Privé",
-  "last_updated": "2026-04-17T12:00:00",
+  "last_updated": "2026-04-21T12:00:00",
   "version": "2.0",
 
   "cities": [
@@ -379,15 +379,16 @@
     }
   ],
 
+
   "events": [
     {
-      "id": "evt_001",
+      "id": "evt_007",
       "format_id": "salotto_damascati",
       "city": "roma",
-      "edition": 1,
+      "edition": 2,
       "title": "Il Salotto dei Damascati",
-      "date_start": "2026-04-17T20:00:00",
-      "date_end":   "2026-04-17T22:30:00",
+      "date_start": "2026-04-24T20:00:00",
+      "date_end":   "2026-04-24T22:30:00",
       "visibility": "public",
       "published": true,
       "featured": false,
@@ -445,13 +446,13 @@
       }
     },
     {
-      "id": "evt_002",
+      "id": "evt_008",
       "format_id": "aperitivi_divini",
       "city": "roma",
-      "edition": 1,
+      "edition": 2,
       "title": "Aperitivi diVini",
-      "date_start": "2026-04-18T20:00:00",
-      "date_end":   "2026-04-18T22:30:00",
+      "date_start": "2026-04-25T20:00:00",
+      "date_end":   "2026-04-25T22:30:00",
       "visibility": "public",
       "published": true,
       "featured": false,
@@ -469,10 +470,10 @@
       "description_override": "",
       "capacity": {
         "total": 20,
-        "available": 20,
+        "available": 18,
         "waitlist": 0,
         "members_reserved": 10,
-        "public_available": 10
+        "public_available": 8
       },
       "registration": {
         "required": true,
