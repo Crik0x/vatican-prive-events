@@ -1,6 +1,6 @@
 {
   "club": "Vatican Privé",
-  "last_updated": "2026-04-21T12:00:00",
+  "last_updated": "2026-04-21T13:00:00",
   "version": "2.0",
 
   "cities": [
@@ -379,136 +379,8 @@
     }
   ],
 
-
   "events": [
-    {
-      "id": "evt_007",
-      "format_id": "salotto_damascati",
-      "city": "roma",
-      "edition": 2,
-      "title": "Il Salotto dei Damascati",
-      "date_start": "2026-04-24T20:00:00",
-      "date_end":   "2026-04-24T22:30:00",
-      "visibility": "public",
-      "published": true,
-      "featured": false,
-      "language": "it",
-      "host": "nicolaj_dortona",
-      "co_host": "",
-      "location": {
-        "name": "Vatican Privé — Sede del Club",
-        "address": "Via della Conciliazione 44, 00193 Roma",
-        "city": "roma",
-        "latitude": 41.90257025285699,
-        "longitude": 12.460015758530925,
-        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
-      },
-      "description_override": "",
-      "capacity": {
-        "total": 20,
-        "available": 20,
-        "waitlist": 0,
-        "members_reserved": 10,
-        "public_available": 10
-      },
-      "registration": {
-        "required": true,
-        "type": "whatsapp",
-        "url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Salotto+dei+Damascati%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
-        "deadline_hours_before": 24,
-        "waitlist_enabled": true
-      },
-      "pricing_event": {
-        "free_with_booking": true,
-        "osservatore": 0,
-        "anima": 0,
-        "costruttore": 0,
-        "public": null
-      },
-      "media": {
-        "image_card": "https://static.tildacdn.com/tild3761-6537-4339-b361-323437666632/Salotto_dei_Damascat.jpg",
-        "image_hero": "",
-        "video_url": ""
-      },
-      "seo": {
-        "title_override": "",
-        "description_override": "",
-        "slug_override": ""
-      },
-      "status": "available",
-      "google_calendar_event_id": "https://calendar.app.google/LwD4fxagR68dYcpj9",
-      "_meta": {
-        "created_at": "2026-04-16T13:00:00",
-        "updated_at": "2026-04-17T12:00:00",
-        "notes_internal": "",
-        "revenue_estimated": 0,
-        "registrations_count": 0
-      }
-    },
-    {
-      "id": "evt_008",
-      "format_id": "aperitivi_divini",
-      "city": "roma",
-      "edition": 2,
-      "title": "Aperitivi diVini",
-      "date_start": "2026-04-25T20:00:00",
-      "date_end":   "2026-04-25T22:30:00",
-      "visibility": "public",
-      "published": true,
-      "featured": false,
-      "language": "it",
-      "host": "nicolaj_dortona",
-      "co_host": "",
-      "location": {
-        "name": "Vatican Privé — Sede del Club",
-        "address": "Via della Conciliazione 44, 00193 Roma",
-        "city": "roma",
-        "latitude": 41.90257025285699,
-        "longitude": 12.460015758530925,
-        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
-      },
-      "description_override": "",
-      "capacity": {
-        "total": 20,
-        "available": 18,
-        "waitlist": 0,
-        "members_reserved": 10,
-        "public_available": 8
-      },
-      "registration": {
-        "required": true,
-        "type": "whatsapp",
-        "url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Aperitivi+diVini%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
-        "deadline_hours_before": 24,
-        "waitlist_enabled": true
-      },
-      "pricing_event": {
-        "free_with_booking": false,
-        "osservatore": null,
-        "anima": null,
-        "costruttore": null,
-        "public": null
-      },
-      "media": {
-        "image_card": "https://static.tildacdn.com/tild3238-3364-4439-b861-643133376465/photo-1644302406517-.jpg",
-        "image_hero": "",
-        "video_url": ""
-      },
-      "seo": {
-        "title_override": "",
-        "description_override": "",
-        "slug_override": ""
-      },
-      "status": "available",
-      "google_calendar_event_id": "https://calendar.app.google/4tLnhVq3mL9FgbZT7",
-      "_meta": {
-        "created_at": "2026-04-16T13:00:00",
-        "updated_at": "2026-04-17T12:00:00",
-        "notes_internal": "",
-        "revenue_estimated": 0,
-        "registrations_count": 0
-      }
-    },
+    
     {
       "id": "evt_003",
       "format_id": "conclave",
@@ -761,6 +633,134 @@
         "created_at": "2026-04-16T13:00:00",
         "updated_at": "2026-04-17T12:00:00",
         "notes_internal": "Meta da definire",
+        "revenue_estimated": 0,
+        "registrations_count": 0
+      }
+    },
+    {
+      "id": "evt_007",
+      "format_id": "salotto_damascati",
+      "city": "roma",
+      "edition": 2,
+      "title": "Il Salotto dei Damascati",
+      "date_start": "2026-04-24T20:00:00",
+      "date_end":   "2026-04-24T22:30:00",
+      "visibility": "public",
+      "published": true,
+      "featured": false,
+      "language": "it",
+      "host": "nicolaj_dortona",
+      "co_host": "",
+      "location": {
+        "name": "Vatican Privé — Sede del Club",
+        "address": "Via della Conciliazione 44, 00193 Roma",
+        "city": "roma",
+        "latitude": 41.90257025285699,
+        "longitude": 12.460015758530925,
+        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
+      },
+      "description_override": "",
+      "capacity": {
+        "total": 20,
+        "available": 20,
+        "waitlist": 0,
+        "members_reserved": 10,
+        "public_available": 10
+      },
+      "registration": {
+        "required": true,
+        "type": "whatsapp",
+        "url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Salotto+dei+Damascati%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
+        "deadline_hours_before": 24,
+        "waitlist_enabled": true
+      },
+      "pricing_event": {
+        "free_with_booking": true,
+        "osservatore": 0,
+        "anima": 0,
+        "costruttore": 0,
+        "public": null
+      },
+      "media": {
+        "image_card": "https://static.tildacdn.com/tild3761-6537-4339-b361-323437666632/Salotto_dei_Damascat.jpg",
+        "image_hero": "",
+        "video_url": ""
+      },
+      "seo": {
+        "title_override": "",
+        "description_override": "",
+        "slug_override": ""
+      },
+      "status": "available",
+      "google_calendar_event_id": "https://calendar.app.google/LwD4fxagR68dYcpj9",
+      "_meta": {
+        "created_at": "2026-04-16T13:00:00",
+        "updated_at": "2026-04-17T12:00:00",
+        "notes_internal": "",
+        "revenue_estimated": 0,
+        "registrations_count": 0
+      }
+    },
+    {
+      "id": "evt_008",
+      "format_id": "aperitivi_divini",
+      "city": "roma",
+      "edition": 2,
+      "title": "Aperitivi diVini",
+      "date_start": "2026-04-25T20:00:00",
+      "date_end":   "2026-04-25T22:30:00",
+      "visibility": "public",
+      "published": true,
+      "featured": false,
+      "language": "it",
+      "host": "nicolaj_dortona",
+      "co_host": "",
+      "location": {
+        "name": "Vatican Privé — Sede del Club",
+        "address": "Via della Conciliazione 44, 00193 Roma",
+        "city": "roma",
+        "latitude": 41.90257025285699,
+        "longitude": 12.460015758530925,
+        "maps_url": "https://maps.app.goo.gl/7onYiX7ZFN8Jfj2bA"
+      },
+      "description_override": "",
+      "capacity": {
+        "total": 20,
+        "available": 18,
+        "waitlist": 0,
+        "members_reserved": 10,
+        "public_available": 8
+      },
+      "registration": {
+        "required": true,
+        "type": "whatsapp",
+        "url": "https://api.whatsapp.com/send/?phone=393203194044&text=Salve%2C+vorrei+prenotare+il+prossimo+evento+%22Aperitivi+diVini%22.+Ci+sono+ancora+posti+disponibili%3F+Mi+chiamo+&type=phone_number&app_absent=0",
+        "deadline_hours_before": 24,
+        "waitlist_enabled": true
+      },
+      "pricing_event": {
+        "free_with_booking": false,
+        "osservatore": null,
+        "anima": null,
+        "costruttore": null,
+        "public": null
+      },
+      "media": {
+        "image_card": "https://static.tildacdn.com/tild3238-3364-4439-b861-643133376465/photo-1644302406517-.jpg",
+        "image_hero": "",
+        "video_url": ""
+      },
+      "seo": {
+        "title_override": "",
+        "description_override": "",
+        "slug_override": ""
+      },
+      "status": "available",
+      "google_calendar_event_id": "https://calendar.app.google/4tLnhVq3mL9FgbZT7",
+      "_meta": {
+        "created_at": "2026-04-16T13:00:00",
+        "updated_at": "2026-04-17T12:00:00",
+        "notes_internal": "",
         "revenue_estimated": 0,
         "registrations_count": 0
       }

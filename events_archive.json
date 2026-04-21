@@ -1,6 +1,6 @@
 {
   "club": "Vatican Privé",
-  "last_updated": "2026-04-21T12:00:00",
+  "last_updated": "2026-04-21T13:00:00",
   "version": "2.0",
   "archive_description": "Repository degli eventi completati. Gli eventi vengono spostati qui una volta che status = 'completed'.",
 
@@ -44,5 +44,30 @@
     }
   ],
 
-  "events_completed": []
+  "events_completed": [
+    {
+      "id": "evt_001",
+      "format_id": "salotto_damascati",
+      "city": "roma",
+      "edition": 1,
+      "title": "Il Salotto dei Damascati",
+      "date_start": "2026-04-17T20:00:00",
+      "date_end": "2026-04-17T22:30:00",
+      "status": "completed",
+      "archived_at": "2026-04-21T16:30:00",
+      "notes": "Evento del 17 aprile - archiviato automaticamente"
+    },
+    {
+      "id": "evt_002",
+      "format_id": "aperitivi_divini",
+      "city": "roma",
+      "edition": 1,
+      "title": "Aperitivi diVini",
+      "date_start": "2026-04-18T20:00:00",
+      "date_end": "2026-04-18T22:30:00",
+      "status": "completed",
+      "archived_at": "2026-04-21T17:00:00",
+      "notes": "Evento del 18 aprile - archiviato automaticamente"
+    }
+  ]
 }
